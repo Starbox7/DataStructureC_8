@@ -12,8 +12,7 @@ treeNode* insertKey(treeNode *p, char x)
 {
 	treeNode *newNode;
 	if (p == NULL) {
-		newNode;
-	(treeNode*)malloc(sizeof(treeNode));
+	newNode = (treeNode*)malloc(sizeof(treeNode));
 	newNode->key = x;
 	newNode ->left = NULL;
 	newNode->right = NULL;
