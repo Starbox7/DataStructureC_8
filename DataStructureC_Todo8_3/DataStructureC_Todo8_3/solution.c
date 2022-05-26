@@ -53,6 +53,9 @@ void printHeap(heapType* h) {
 }
 
 void main() {
+	printf("18114847 김범준\n");
+	printf("실습 #8-3번\n");
+
 	int i, n, item;
 	heapType* heap = createHeap();
 	insertHeap(heap, 10);

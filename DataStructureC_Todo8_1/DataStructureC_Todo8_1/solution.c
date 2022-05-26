@@ -3,12 +3,12 @@
 #include <memory.h>
 
 typedef struct treeNode {
-    char data;
+    int data;
     struct treeNode* left;
     struct treeNode* right;
 }treeNode;
 
-treeNode* makeRootNode(char data, treeNode* leftNode, treeNode* rightNode) {
+treeNode* makeRootNode(int data, treeNode* leftNode, treeNode* rightNode) {
     treeNode* root = (treeNode*)malloc(sizeof(treeNode));
     root->data = data;
     root->left = leftNode;
@@ -18,7 +18,7 @@ treeNode* makeRootNode(char data, treeNode* leftNode, treeNode* rightNode) {
 
 void preorder(treeNode* root) {
     if (root) {
-        printf("%c", root->data);
+        printf("%d  ", root->data);
         preorder(root->left);
         preorder(root->right);
     }
@@ -27,7 +27,7 @@ void preorder(treeNode* root) {
 void inorder(treeNode* root) {
     if (root) {
         inorder(root->left);
-        printf("%c", root->data);
+        printf("%d  ", root->data);
         inorder(root->right);
     }
 }
@@ -36,18 +36,21 @@ void postorder(treeNode* root) {
     if (root) {
         postorder(root->left);
         postorder(root->right);
-        printf("%c", root->data);
+        printf("%d  ", root->data);
     }
 }
 
 void main() {
-    treeNode* n7 = makeRootNode('D', NULL, NULL);
-    treeNode* n6 = makeRootNode('C', NULL, NULL);
-    treeNode* n5 = makeRootNode('B', NULL, NULL);
-    treeNode* n4 = makeRootNode('A', NULL, NULL);
-    treeNode* n3 = makeRootNode('/', n6, n7);
-    treeNode* n2 = makeRootNode('*', n4, n5);
-    treeNode* n1 = makeRootNode('-', n2, n3);
+    printf("학번 : 18114847, 이름 : 김범준\n");
+    printf("실습 #8-1 이진트리의 순회 -> #8-3 함수 수정\n");
+
+    treeNode* n7 = makeRootNode(1111, NULL, NULL);  //노드 순서는 반대
+    treeNode* n6 = makeRootNode(113, NULL, NULL);
+    treeNode* n5 = makeRootNode(112, NULL, NULL);
+    treeNode* n4 = makeRootNode(111, n7, NULL);
+    treeNode* n3 = makeRootNode(12, n5, n6);
+    treeNode* n2 = makeRootNode(11, n4, NULL);
+    treeNode* n1 = makeRootNode(1,n2, n3);
 
     printf("\n preorder : ");
     preorder(n1);
